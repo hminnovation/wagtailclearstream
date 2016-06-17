@@ -1,0 +1,15 @@
+{
+  "name": "wagtailbettereditor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp"
+  },
+  "author": "Alex Gleason",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.1.1"
+  }
+}

@@ -1,0 +1,199 @@
+// colours
+$color-teal: #43b1b0;
+$color-teal-darker: darken($color-teal, 10%);
+$color-teal-dark: #246060;
+$color-blue: #71b2d4;
+$color-red: #cd3238;
+$color-orange: #e9b04d;
+$color-green: #189370;
+$color-salmon: #f37e77;
+$color-salmon-light: #fcf2f2;
+$color-white: #fff;
+$color-black: #000;
+
+// darker to lighter
+$color-grey-1: #333;
+$color-grey-1-1: #404040;
+$color-grey-2: #666;
+$color-grey-3: #d9d9d9;
+$color-grey-4: #e6e6e6;
+$color-grey-5: #fafafa;
+
+$sequence-bg: #f2f2f2;
+
+#content {
+
+  // Help text
+  .help {
+    width: auto;
+    position: static;
+    display: block;
+    float: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 28px;
+    &::before {
+      margin-top: 0;
+    }
+  }
+  .help.help {
+    opacity: 1;
+  }
+
+  // Get rid of teal BG on input focus
+  input, textarea, select, .richtext, .taggit {
+    &:focus {
+      background: white;
+    }
+  }
+  .richtext {
+    padding: 1em;
+    *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .object {
+    padding-left: 20px;
+    padding-right: 20px;
+    > fieldset {
+      max-width: none;
+      width: 100%;
+      padding-top: 2em;
+    }
+    > .help + fieldset {
+      padding-top: 0;
+    }
+  }
+
+  .full {
+    padding: 0 20px;
+    > fieldset {
+      margin-left: 0;
+      padding-top: 0;
+    }
+    input {
+      padding-left: 7px;
+      padding-right: 0;
+      background: transparent;
+      border: 0;
+    }
+    > .help + fieldset input {
+      padding-top: 20px;
+    }
+  }
+
+  // Force max-width on some elements
+  .sequence-member,
+  .sequence-container,
+  .sequence-container-inner,
+  .fields,
+  .field-content {
+    width: 100%;
+  }
+
+  .field-content > .help.help.help.help.help {
+    padding-left: 3px;
+    margin-top: 7px;
+  }
+
+  // StreamField styling
+  .stream-field.stream-field.stream-field.stream-field {
+    padding: 20px;
+    > fieldset {
+      padding-top: 14px;
+    }
+    // Nested block styles
+    .sequence-member {
+      background: $sequence-bg;
+      border: 1px solid $color-grey-3;
+      border-radius: 4px;
+      margin: 20px 0;
+      .sequence-member {
+        background: white;
+        .sequence-member {
+          background: $sequence-bg;
+          .sequence-member {
+            background: white;
+            .sequence-member {
+              background: $sequence-bg;
+            }
+          }
+        }
+      }
+    }
+    .sequence-member-inner {
+      padding: 20px;
+    }
+    .sequence-controls {
+      background: $color-grey-4;
+      border: none;
+      opacity: 1;
+      visibility: visible;
+      position: static;
+      border-radius: 0;
+      display: flex;
+      justify-content: flex-end;
+      label {
+        margin-top: 7px;
+        color: $color-grey-2;
+      }
+      button {
+        background: transparent;
+        border: none;
+        &::before {
+          color: $color-grey-2;
+        }
+        &:hover {
+          &::before {
+            color: $color-teal;
+          }
+        }
+      }
+      h3 {
+        flex: 1;
+      }
+    }
+    .help {
+      margin: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    // Make (+) buttons only appear when hovering the correct element
+    .stream-menu .toggle {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .sequence-container,
+    .sequence-member {
+      &:hover > .stream-menu .toggle {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    // Align first (+) due to new padding
+    .sequence-container > .stream-menu .toggle {
+      top: 8px;
+    }
+    // Fields
+    .fields {
+      label {
+        display: block;
+        width: auto;
+        float: none;
+      }
+      .field {
+        display: block;
+        width: auto;
+        float: none;
+      }
+    }
+  }
+}
+.hallotoolbar.hallotoolbar {
+  margin-top: 0;
+  margin-left: 0;
+  &.full {
+    margin-left: 15px;
+  }
+}
