@@ -4,3 +4,4 @@ wagtailbettereditor.egg-info/
 dist/
 build/
 *.pyc
+npm-debug.log

@@ -9,4 +9,4 @@ gulp.task('compile-sass', function() {
         .pipe(gulp.dest('wagtailbettereditor/static/wagtailbettereditor/css'))
 })
 
-gulp.task('default', ['compile-sass', 'copy-fonts'])
+gulp.task('default', ['compile-sass'])
