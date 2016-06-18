@@ -413,13 +413,12 @@ header {
     }
   }
 
-  .listing .handle {
-    margin: -28px 0 0 -12px;
-  }
-
   .button, 
   .button.bicolor {
     border: 1px solid $color-teal-light-2;
   }
 }
 
+.listing .handle {
+    margin: -28px 0 0 -40px;
+  }
