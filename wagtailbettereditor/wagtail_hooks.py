@@ -11,3 +11,8 @@ from wagtail.wagtailcore import __version__ as WAGTAIL_VERSION
 def import_wagtailbettereditor_stylesheet():
     elem = '<link rel="stylesheet" href="%swagtailbettereditor/css/wagtailbettereditor.css">' % settings.STATIC_URL
     return format_html(elem)
+
+@hooks.register('insert_global_admin_css')
+def global_admin_css():
+    elem = '<link rel="stylesheet" href="%swagtailbettereditor/css/wagtailbettereditor.css">' % settings.STATIC_URL
+    return format_html(elem)
