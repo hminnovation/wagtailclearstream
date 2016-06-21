@@ -75,6 +75,9 @@ $sequence-bg: #f2f2f2;
   .object {
     padding-left: 20px;
     padding-right: 20px;
+    &.empty {
+      padding-left: 50px;
+    }
     > fieldset {
       max-width: none;
       width: 100%;
