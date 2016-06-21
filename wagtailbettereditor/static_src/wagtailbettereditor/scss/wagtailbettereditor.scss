@@ -354,6 +354,14 @@ input[type=button],
   color: $color-grey-5;
 }
 
+.listing .button-secondary {
+  color: $color-teal;
+  &:hover {
+    background-color: $color-teal;
+    color: $color-white;
+  }
+}
+
 .page-explorer .listing .index .privacy-indicator {
   color: $color-white;
 }
