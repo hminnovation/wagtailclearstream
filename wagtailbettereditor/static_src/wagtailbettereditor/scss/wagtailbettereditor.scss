@@ -1,7 +1,10 @@
 // colours
-$color-teal: #43b1b0;
+$color-teal: #0f6665; /*to make it validate AA */
 $color-teal-darker: darken($color-teal, 10%);
-$color-teal-dark: #246060;
+$color-teal-lighter: lighten($color-teal, 10%);
+$color-teal-dark: #014b4a;
+$color-teal-light: #358c8b;
+$color-teal-light-2: #43b1b0;
 $color-blue: #71b2d4;
 $color-red: #cd3238;
 $color-orange: #e9b04d;
@@ -21,8 +24,8 @@ $color-grey-5: #fafafa;
 
 $sequence-bg: #f2f2f2;
 
-#content {
-
+.content, #content {
+/* need to use .content as #content isn't used on snippets */
   // Help text
   .help {
     width: auto;
@@ -32,14 +35,30 @@ $sequence-bg: #f2f2f2;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 28px;
-    &::before {
+    &:before {
       margin-top: 0;
     }
   }
-  .help.help {
-    opacity: 1;
+  p.help { 
+    &::before {
+      /* to give consistency between multifieldpanel help text and other panels */
+      border-radius: 100%;
+      display: block;
+      float: left;
+      content: '?';
+      border: 1px solid #666;
+      color: #666;
+      height: 15px;
+      width: 15px;
+      line-height: 15px;
+      text-align: center;
+      font-size: 1.1em;
+      margin: 0.1em 0.5em 0 0;
+    }
   }
-
+  .help.help {
+    opacity: 0.8;
+  }
   // Get rid of teal BG on input focus
   input, textarea, select, .richtext, .taggit {
     &:focus {
@@ -59,7 +78,6 @@ $sequence-bg: #f2f2f2;
     > fieldset {
       max-width: none;
       width: 100%;
-      padding-top: 2em;
     }
     > .help + fieldset {
       padding-top: 0;
@@ -197,3 +215,211 @@ $sequence-bg: #f2f2f2;
     margin-left: 15px;
   }
 }
+
+// Inline panels
+.object-help ~ .multiple {
+  padding-top: 0!important; 
+  /* Needing to use important because .multiple .object is defined afterwards by page-editor.css */
+}
+.multiple {
+  width: 100%;
+  > li {
+    border-radius: 3px;
+    padding: 0;
+    > fieldset {
+      padding: 0 20px;
+    }
+  }
+  .model_choice_field.select label {
+    padding-top: 0.2em;
+  }  
+  /* Need to make below a mixin */
+  .controls {
+    background: $color-grey-4;
+    border: none;
+    opacity: 1;
+    visibility: visible;
+    position: static;
+    border-radius: 0;
+    display: flex;
+    justify-content: flex-end;
+    label {
+      margin-top: 7px;
+      color: $color-grey-2;
+  }
+  button {
+    background: transparent;
+    border: none;
+    &::before {
+      color: $color-grey-2;
+    }
+    &:hover {
+      &::before {
+        color: $color-teal;
+        }
+      }
+    }
+  }
+}
+
+// Multi-fields
+.multi-field {
+  > fieldset {
+    > ul {
+      > li {
+        border-bottom: 1px solid $color-grey-4;
+        margin: 0 0 1em 0;
+      }
+    }
+  }
+}
+
+// Save footer
+footer {
+  background: #444;
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0 auto;
+  padding: 1em;
+  width: 100%;
+  ul {
+    padding: 0em;
+  }
+  footer .preview button, footer .preview .button {
+    height: 3em;
+  }
+  .meta {
+    background-color: #333;
+    display: block;
+    float: left;
+    font-size: 0.85em;
+    height: 2.2em;
+    margin: -50px 0 0 -15px;
+    padding: 7px 1.5%;
+    position: absolute;
+    text-align: left;
+    width: 100%;
+  }
+  a[href$="delete/"] {
+    background-color: $color-red;
+    opacity: 0.8;
+    &:hover {
+      background-color: darken($color-red, 10%);
+      opacity: 1;
+    }
+  }
+  a[href$="unpublish/"] {
+    background-color: $color-grey-1-1;
+    opacity: 0.8;
+      &:hover {
+      background-color: $color-grey-1;
+      opacity: 1;
+    }
+  }
+}
+
+// WCAG AA validation
+/* This should obvs be done by changing the base Wagtail colour palette so that it validates rather than hacking here */
+header,
+header.merged,
+.tab-nav.merged,
+.dropdown ul,
+input[type=submit],
+input[type=reset],
+input[type=button],
+.button, button,
+.page-explorer .listing .index,
+.breadcrumb {
+  background-color: $color-teal;
+}
+
+.page-explorer .listing .index .privacy-indicator {
+  color: $color-white;
+}
+
+.page-explorer .listing .index .button.bicolor {
+  border: 1px solid $color-teal-light-2;
+}
+
+.messages .success {
+  background-color: $color-teal-dark;
+}
+
+footer {
+  > 
+  input[type=submit], 
+  input[type=reset], 
+  input[type=button], 
+  .button, button {
+  border: 0px;
+  }
+}
+
+.modal-content {
+  > 
+  button {
+    background-color: #43b1b0;
+    &:hover {
+      background-color: $color-teal-lighter;
+    }
+  }
+}
+
+a {
+  color: $color-teal;
+  &:hover {
+    color: $color-teal-lighter;
+  }
+}
+
+// Header
+header {
+  h1 {
+    margin: 0.2em 0 0 -1.5em;
+  }
+
+  .col1 + .col9 
+  > 
+  h1 {
+    /* for the user homepage */
+    margin: -0.2em;
+  }
+
+  .tab-nav li {
+    margin-left: 2em;
+  }
+
+  .listing.full-width td:first-child, 
+  .listing.full-width th:first-child {
+    padding-left: 1.8em;
+  }
+
+  .messages ul li {
+    padding: 20px;
+  }
+
+  .breadcrumb {
+    border-bottom: 1px solid $color-teal-light;
+    padding: 10px;
+    li {
+      margin: -10px -10px -10px 10px;
+      padding: 1.5em 1.3em;
+      &:first-child {
+      margin: -10px;
+      padding-left: 40px;
+      }
+      &:hover {
+        background-color: $color-teal-light;
+      }
+    }
+  }
+
+  .button, 
+  .button.bicolor {
+    border: 1px solid $color-teal-light-2;
+  }
+}
+
+.listing .handle {
+    margin: -28px 0 0 -40px;
+  }
