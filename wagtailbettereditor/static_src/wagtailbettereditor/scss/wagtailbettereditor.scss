@@ -262,6 +262,20 @@ $sequence-bg: #f2f2f2;
   }
 }
 
+// Standalone richtext fields
+.content .richtext, #content .richtext {
+    border-radius: 6px;
+    border-width: 1px 1px;
+    font-family: Open Sans,Arial,sans-serif;
+    margin: 60px 0 20px 0;
+    padding: 1.8em 1.2em!important;
+    -webkit-appearance: none;
+}
+
+.object-help ~ fieldset > .fields > li > .field > .field-content > .input > .richtext {
+    margin-top: 0px!important;
+  }
+
 // Multi-fields
 .multi-field {
   > fieldset {
@@ -375,7 +389,7 @@ a {
 // Header
 header {
   h1 {
-    margin: 0.2em 0 0 -1.5em;
+    margin: 0.2em 0 0 0;
   }
 
   .col1 + .col9 
@@ -383,10 +397,6 @@ header {
   h1 {
     /* for the user homepage */
     margin: -0.2em;
-  }
-
-  .tab-nav li {
-    margin-left: 2em;
   }
 
   .listing.full-width td:first-child, 
@@ -423,3 +433,11 @@ header {
 .listing .handle {
     margin: -28px 0 0 -40px;
   }
+
+// Tabs
+.tab-nav li {
+    margin-left: 2em;
+  &:first-child {
+      margin-left: 4em;
+  }
+}
