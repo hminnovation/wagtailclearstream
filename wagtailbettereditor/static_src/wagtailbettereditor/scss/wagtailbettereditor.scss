@@ -130,6 +130,27 @@ $sequence-bg: #f2f2f2;
       border: 1px solid $color-grey-3;
       border-radius: 4px;
       margin: 20px 0;
+      .sequence-member-inner {
+        background-color: white;
+        input, textarea, select, .richtext, .tagit {
+          box-sizing: border-box;
+          border-radius: 6px;
+          width: 100%;
+          font-family: Open Sans,Arial,sans-serif;
+          border: 1px solid #e6e6e6!important;
+          padding: 0.9em 1.2em!important;
+          background-color: #fafafa!important;
+          -webkit-appearance: none;
+          color: #333;
+          font-size: 1.2em;
+          font-weight: 300;
+          outline: none;
+          &:focus {
+            background-color: white!important;
+            border-color: #54d0d0!important;
+            }
+          }
+        }
       .sequence-member {
         background: white;
         .sequence-member {
@@ -218,6 +239,15 @@ $sequence-bg: #f2f2f2;
     margin-left: 15px;
   }
 }
+
+// Snippets
+/* The help text has slightly different rules on snippet pages */
+.object .object-help.help {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
 
 // Inline panels
 .object-help ~ .multiple {
