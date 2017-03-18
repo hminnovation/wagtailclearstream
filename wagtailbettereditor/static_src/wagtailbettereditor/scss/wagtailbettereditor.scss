@@ -1,10 +1,8 @@
 // colours
-$color-teal: #0f6665; /*to make it validate AA */
+// These variables are from Wagtail core
+$color-teal: #43b1b0;
 $color-teal-darker: darken($color-teal, 10%);
-$color-teal-lighter: lighten($color-teal, 10%);
-$color-teal-dark: #014b4a;
-$color-teal-light: #358c8b;
-$color-teal-light-2: #43b1b0;
+$color-teal-dark: #246060;
 $color-blue: #71b2d4;
 $color-red: #cd3238;
 $color-orange: #e9b04d;
@@ -296,7 +294,7 @@ $sequence-bg: #f2f2f2;
 }
 
 // Standalone richtext fields
-.content .richtext, #content .richtext {
+.content .richtext.expanded, #content .richtext.expanded {
     border-radius: 6px;
     border-width: 1px 1px;
     font-family: Open Sans,Arial,sans-serif;
@@ -318,171 +316,5 @@ $sequence-bg: #f2f2f2;
         margin: 0 0 1em 0;
       }
     }
-  }
-}
-
-// Save footer
-footer {
-  background: #444;
-  border-radius: 0;
-  box-shadow: none;
-  margin: 0 auto;
-  padding: 1em;
-  width: 100%;
-  ul {
-    padding: 0em;
-  }
-  footer .preview button, footer .preview .button {
-    height: 3em;
-  }
-  .meta {
-    background-color: #333;
-    display: block;
-    float: left;
-    font-size: 0.85em;
-    height: 2.2em;
-    margin: -50px 0 0 -15px;
-    padding: 7px 1.5%;
-    position: absolute;
-    text-align: left;
-    width: 100%;
-  }
-  a[href$="delete/"] {
-    background-color: $color-red;
-    opacity: 0.8;
-    &:hover {
-      background-color: darken($color-red, 10%);
-      opacity: 1;
-    }
-  }
-  a[href$="unpublish/"] {
-    background-color: $color-grey-1-1;
-    opacity: 0.8;
-      &:hover {
-      background-color: $color-grey-1;
-      opacity: 1;
-    }
-  }
-}
-
-// WCAG AA validation
-/* This should obvs be done by changing the base Wagtail colour palette so that it validates rather than hacking here */
-header,
-header.merged,
-.tab-nav.merged,
-.dropdown ul,
-input[type=submit],
-input[type=reset],
-input[type=button],
-.button, button,
-.page-explorer .listing .index,
-.breadcrumb {
-  background-color: $color-teal;
-}
-
-.button-secondary {
-  color: $color-grey-5;
-}
-
-.listing .button-secondary {
-  color: $color-teal;
-  &:hover {
-    background-color: $color-teal;
-    color: $color-white;
-  }
-}
-
-.page-explorer .listing .index .privacy-indicator {
-  color: $color-white;
-}
-
-.page-explorer .listing .index .button.bicolor {
-  border: 1px solid $color-teal-light-2;
-}
-
-.messages .success {
-  background-color: $color-teal-dark;
-}
-
-footer {
-  > 
-  input[type=submit], 
-  input[type=reset], 
-  input[type=button], 
-  .button, button {
-  border: 0px;
-  }
-}
-
-.modal-content {
-  > 
-  button {
-    background-color: #43b1b0;
-    &:hover {
-      background-color: $color-teal-lighter;
-    }
-  }
-}
-
-a {
-  color: $color-teal;
-  &:hover {
-    color: $color-teal-lighter;
-  }
-}
-
-// Header
-header {
-  h1 {
-    margin: 0.2em 0 0 0;
-  }
-
-  .col1 + .col9 
-  > 
-  h1 {
-    /* for the user homepage */
-    margin: -0.2em;
-  }
-
-  .listing.full-width td:first-child, 
-  .listing.full-width th:first-child {
-    padding-left: 1.8em;
-  }
-
-  .messages ul li {
-    padding: 20px;
-  }
-
-  .breadcrumb {
-    border-bottom: 1px solid $color-teal-light;
-    padding: 10px;
-    li {
-      margin: -10px -10px -10px 10px;
-      padding: 1.5em 1.3em;
-      &:first-child {
-      margin: -10px;
-      padding-left: 40px;
-      }
-      &:hover {
-        background-color: $color-teal-light;
-      }
-    }
-  }
-
-  .button, 
-  .button.bicolor {
-    border: 1px solid $color-teal-light-2;
-  }
-}
-
-.listing .handle {
-    margin: -28px 0 0 -40px;
-  }
-
-// Tabs
-.tab-nav li {
-    margin-left: 2em;
-  &:first-child {
-      margin-left: 4em;
   }
 }
