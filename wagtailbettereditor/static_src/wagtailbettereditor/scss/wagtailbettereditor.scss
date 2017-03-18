@@ -118,14 +118,14 @@ $sequence-bg: #f2f2f2;
 
   // StreamField styling
   .stream-field.stream-field.stream-field.stream-field {
-    padding: 20px;
+    padding: 20px 20px 20px 10px;
     > fieldset {
       padding-top: 14px;
     }
     // Nested block styles
     .sequence-member {
-      background: $sequence-bg;
-      border: 1px solid $color-grey-3;
+      // background: $color-salmon-light;
+      border: 1px solid $color-salmon-light;
       border-radius: 4px;
       margin: 20px 0;
       .sequence-member-inner {
@@ -166,27 +166,43 @@ $sequence-bg: #f2f2f2;
       padding: 20px;
     }
     .sequence-controls {
-      background: $color-grey-4;
-      border: none;
-      opacity: 1;
-      visibility: visible;
-      position: static;
+      background: $color-salmon-light;
       border-radius: 0;
+      border: none;
       display: flex;
+      height: 44px;
       justify-content: flex-end;
+      opacity: 1;
+      position: static;
+      visibility: visible;
       label {
-        margin-top: 7px;
-        color: $color-grey-2;
+        margin-top: 14px;
+        color: $color-grey-1;
+        span {
+          color: $color-grey-2;
+        }
       }
       button {
         background: transparent;
         border: none;
+        height: 44px;
+        width: 44px;
         &::before {
-          color: $color-grey-2;
+          color: $color-grey-1;
         }
         &:hover {
+          background: $color-salmon;
           &::before {
-            color: $color-teal;
+            color: $color-white;
+          }
+        }
+        &.collapse {
+          background-color: $color-salmon;
+          border-radius: 0;
+          margin-left: -13px;
+          margin-right: 14px;
+          &::before {
+            color: $color-white;
           }
         }
       }
@@ -318,3 +334,4 @@ $sequence-bg: #f2f2f2;
     }
   }
 }
+
