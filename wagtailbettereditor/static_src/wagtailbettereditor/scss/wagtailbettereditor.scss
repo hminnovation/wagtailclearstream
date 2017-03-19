@@ -161,6 +161,11 @@ $sequence-bg: #f2f2f2;
           }
         }
       }
+      &.collapsed {
+        .sequence-member-inner {
+          display: none;
+        }
+      }
     }
     .sequence-member-inner {
       padding: 20px;
@@ -335,3 +340,15 @@ $sequence-bg: #f2f2f2;
   }
 }
 
+.delete-dialog {
+    background-color: $color-salmon;
+    display: block;
+    margin-top: -56px;
+    margin-right: 0;
+    padding: 8px 12px;
+    text-align: right;
+  a {
+    color: $color-white;
+    display: block;
+  }
+}

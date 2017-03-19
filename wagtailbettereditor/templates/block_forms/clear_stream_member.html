@@ -3,13 +3,17 @@
 {% block header_controls %}
     <div class="sequence-controls">
         <div class="button-group">
-        	<button type="button" id="abc" title="collapse" class="button icon text-replace icon-arrow-down collapse">Collapse</button>
+        	<button type="button" id="{{ prefix }}-collapse-toggle" title="collapse" class="button icon text-replace icon-arrow-down collapse">Collapse</button>
         </div>
         <h3><label{% if child.id_for_label %} for="{{ child.id_for_label }}"{% endif %}><strong>{{ child.block.label }}</strong> - <span class="child_value">{{ child.value|striptags|truncatewords:5 }}</span></label></h3>
         <div class="button-group button-group-square">
             <button type="button" id="{{ prefix }}-moveup" title="{% trans 'Move up' %}" class="button icon text-replace icon-order-up">{% trans 'Move up' %}</button>
             <button type="button" id="{{ prefix }}-movedown" title="{% trans 'Move down' %}" class="button icon text-replace icon-order-down">{% trans 'Move down' %}</button>
             <button type="button" id="{{ prefix }}-delete" title="{% trans 'Delete' %}" class="button icon text-replace hover-no icon-bin">{% trans 'Delete' %}</button>
+            <div class="delete-dialog">
+                <a id="{{ prefix }}-delete" class="delete-cancel">{% trans 'Cancel' %}</a>
+                <a id="{{ prefix }}-delete" class="delete-confirmation">{% trans 'Delete' %}</a>
+            </div>
         </div>
     </div>
 {% endblock %}
