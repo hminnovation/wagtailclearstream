@@ -11,6 +11,12 @@ def global_admin_css():
     elem = '<link rel="stylesheet" href="%swagtailbettereditor/css/wagtailbettereditor.css">' % settings.STATIC_URL
     return format_html(elem)
 
+@hooks.register('insert_global_admin_js')
+def global_admin_js():
+    return format_html(
+        '<script src="/static/wagtailbettereditor/js/clear_stream.js"></script>',
+    )
+
 # New Wagtail versions support importing CSS throughout the admin.
 # Fall back to the old hook (editor screen only) for older versions.
 if parse_version(WAGTAIL_VERSION) >= parse_version('1.4'):
