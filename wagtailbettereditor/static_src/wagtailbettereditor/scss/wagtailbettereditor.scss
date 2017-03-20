@@ -380,3 +380,27 @@ $sequence-bg: #f2f2f2;
   padding: 4px 4px 4px 7px;
   border-radius: 3px;
 }
+
+.block_field.stream-field h2 label {
+  &::after {
+    border: 1px solid $color-salmon;
+    color: $color-grey-2;
+    content: "Open/close all";
+    cursor: pointer;
+    float: right;
+    margin: -4px 25px;
+    padding: 6px;
+  }
+  &:hover {
+    &::after {
+      background-color: $color-salmon;
+      color: $color-white;
+    }
+  }
+}
+
+.fixed {
+  box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.15);
+  margin-left: 180px!important;
+  position: fixed!important;
+}

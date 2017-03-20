@@ -1,12 +1,33 @@
 // For various js fun
 // For various js fun
 $(document).ready(function() {
-    // find every .sequence-member in the dom
+    // Fix the top Streamfield bar through the StreamField section
+    var stickyStreamField = $('.block_field.stream-field h2').offset().top;
+    $(window).scroll(function() {  
+        if ($(window).scrollTop() > stickyStreamField) {
+            $('.block_field.stream-field h2').addClass('fixed');
+        }
+        else {
+            $('.block_field.stream-field h2').removeClass('fixed');
+        }  
+    });
+
+    // Remove it the .fixed when it reaches the bottom of .stream-field
+    $(window).scroll(function(){
+        var scroll_top = $(this).scrollTop(); // get scroll position top
+        var height_element_parent =  $(".block_field.stream-field h2").parent().outerHeight(); //get high parent element
+        var height_element = $(".block_field.stream-field h2").height(); //get high of elemeneto
+        var position_fixed_max = height_element_parent - height_element; // get the maximum position of the elemen
+        var position_fixed = scroll_top < 25 ? 25 - scroll_top : position_fixed_max > scroll_top ? 0 : position_fixed_max - scroll_top;
+        $(".block_field.stream-field h2").css("top",position_fixed);
+});
+
     
     $(this).find('.stream-field h2').on('click', function() {
         $(document).find('.sequence-member').toggleClass('collapsed ');
         });
 
+    // find every .sequence-member in the dom
     $('.sequence-member').each(function() {
         var el = $(this);
         var delDialog = $(this).find('.delete-dialog');
