@@ -343,12 +343,16 @@ $sequence-bg: #f2f2f2;
 .delete-dialog {
     background-color: $color-salmon;
     display: block;
-    margin-top: -56px;
+    float: right;
     margin-right: 0;
     padding: 8px 12px;
     text-align: right;
+    z-index: 3;
   a {
     color: $color-white;
     display: block;
+  }
+  &.closed {
+    display: none;
   }
 }

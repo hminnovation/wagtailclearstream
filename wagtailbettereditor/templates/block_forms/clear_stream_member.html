@@ -9,9 +9,8 @@
         <div class="button-group button-group-square">
             <button type="button" id="{{ prefix }}-moveup" title="{% trans 'Move up' %}" class="button icon text-replace icon-order-up">{% trans 'Move up' %}</button>
             <button type="button" id="{{ prefix }}-movedown" title="{% trans 'Move down' %}" class="button icon text-replace icon-order-down">{% trans 'Move down' %}</button>
-            <button type="button" id="{{ prefix }}-delete" title="{% trans 'Delete' %}" class="button icon text-replace hover-no icon-bin">{% trans 'Delete' %}</button>
-            <div class="delete-dialog">
-                <a id="{{ prefix }}-delete" class="delete-cancel">{% trans 'Cancel' %}</a>
+            <button type="button" title="{% trans 'Delete' %}" class="button open-toggle icon text-replace hover-no icon-bin">{% trans 'Delete' %}</button>
+            <div class="delete-dialog closed">
                 <a id="{{ prefix }}-delete" class="delete-confirmation">{% trans 'Delete' %}</a>
             </div>
         </div>
