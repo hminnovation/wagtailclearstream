@@ -178,6 +178,7 @@ $sequence-bg: #f2f2f2;
       height: 44px;
       justify-content: flex-end;
       opacity: 1;
+      overflow: hidden;
       position: static;
       visibility: visible;
       label {
@@ -340,19 +341,42 @@ $sequence-bg: #f2f2f2;
   }
 }
 
+.delete-open-toggle.icon-cross {
+  background-color: $color-grey-4!important;
+  margin-right: -1px;
+  &:hover {
+    background-color: $color-grey-2!important;
+  }
+}
 .delete-dialog {
-    background-color: $color-salmon;
+    background-color: $color-grey-4;
+    cursor: pointer;
     display: block;
     float: right;
-    margin-right: 0;
-    padding: 8px 12px;
-    text-align: right;
-    z-index: 3;
+    padding: 13px 14px;
   a {
-    color: $color-white;
+    color: $color-black;
     display: block;
+    &:hover {
+      background-color: $color-salmon;
+      color: $color-white;
+    }
+  }
+  &:hover {
+      background-color: $color-salmon;
+      a {
+        color: $color-white;
+      }
   }
   &.closed {
     display: none;
   }
+}
+
+.icon-streamfield {
+  margin: -10px 10px 0 0;
+  display: inline-block;
+  border: 1px solid $color-grey-3;
+  padding: 4px 4px 4px 7px;
+  border-radius: 3px;
 }
