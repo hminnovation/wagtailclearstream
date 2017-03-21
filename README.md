@@ -1,21 +1,16 @@
-Wagtail Better Editor
-=====================
-This is an amended version of the Wagtail editor interface that makes it easier for users more easily visualises nested items and corrects a number of minor styling issues. Changes
+Wagtail Clear StreamField
+============================
+This is an amended version of Wagtail's StreamField interface that introduces a new class called `ClearField`
 
  - Much improved UI for nested StreamFields
  - Consistency of UI presentation between inline panels, streamfield panels, multipanels etc.
  - Always visible help text
- - Consistent alignment of titles, fields and help text
- - Consistent alignment of success text, breadcrumb and title
- - Separation of meta data and actions in editor footer
- - Conforms AA to WCAG
- - Styling added to `delete` and `unpublish` actions in dropdown menu 
+ - Confirmation on delete of StreamField items 
 
-![Screenshot](screenshot.png)
+![Screenshot](screenshot1.png)
+![Screenshot](screenshot2.png)
 
 Install
 -------
 
-    pip install wagtailbettereditor
-
-Then add `wagtailbettereditor` to your installed apps.
+To be written
