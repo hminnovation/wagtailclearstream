@@ -1,1 +1,1 @@
-recursive-include wagtailbettereditor/static *
+recursive-include wagtailclearstream/static *

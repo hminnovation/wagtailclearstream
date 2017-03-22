@@ -1,6 +1,6 @@
 node_modules/
-wagtailbettereditor/static/
-wagtailbettereditor.egg-info/
+wagtailclearstream/static/
+wagtailclearstream.egg-info/
 dist/
 build/
 *.pyc

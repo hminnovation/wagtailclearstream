@@ -16,6 +16,6 @@ This is an amended version of the Wagtail editor interface that makes it easier 
 Install
 -------
 
-    pip install wagtailbettereditor
+    pip install wagtailclearstream
 
-Then add `wagtailbettereditor` to your installed apps.
+Then add `wagtailclearstream` to your installed apps.

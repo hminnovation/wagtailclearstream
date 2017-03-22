@@ -8,7 +8,7 @@ from os import path
 from setuptools import find_packages, setup
 from setuptools.command.egg_info import egg_info as base_egg_info
 
-from wagtailbettereditor import __version__
+from wagtailclearstream import __version__
 
 here = path.abspath(path.dirname(__file__))
 
@@ -31,11 +31,11 @@ class egg_info(base_egg_info):
 
 
 setup(
-    name='wagtailbettereditor',
+    name='wagtailclearstream',
     version=__version__,
     description='Improvement to Wagtail editor UI.',
     long_description=long_description,
-    url='https://github.com/alexgleason/wagtailbettereditor',
+    url='https://github.com/alexgleason/wagtailclearstream',
     author='Alex Gleason',
     author_email='alex@alexgleason.me',
     license='MIT',
