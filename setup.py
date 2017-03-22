@@ -33,11 +33,11 @@ class egg_info(base_egg_info):
 setup(
     name='wagtailclearstream',
     version=__version__,
-    description='Improvement to Wagtail editor UI.',
+    description='Improvement to StreamField UI by extending StreamBlock.',
     long_description=long_description,
-    url='https://github.com/alexgleason/wagtailclearstream',
-    author='Alex Gleason',
-    author_email='alex@alexgleason.me',
+    url='https://github.com/heymonkeyriot/wagtailclearstream',
+    author='Edd Baldry',
+    author_email='edd.baldry@gmail.com',
     license='MIT',
     classifiers=[
         "Environment :: Web Environment",
@@ -48,7 +48,7 @@ setup(
         'Topic :: Internet :: WWW/HTTP',
         "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
     ],
-    keywords='development',
+    keywords=['development'],
     packages=find_packages(),
     include_package_data=True,
     install_requires=[

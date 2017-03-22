@@ -6,7 +6,7 @@
   "scripts": {
     "build": "gulp"
   },
-  "author": "Alex Gleason",
+  "author": "Edd Baldry",
   "license": "GPL-3.0",
   "devDependencies": {
     "gulp": "^3.9.0",
