@@ -1,0 +1,18 @@
+{% extends "wagtailadmin/block_forms/stream_member.html" %}
+{% load i18n %}
+{% block header_controls %}
+    <div class="sequence-controls">
+        <div class="button-group">
+        	<button type="button" id="{{ prefix }}-collapse-toggle" title="collapse" class="button icon text-replace icon-plus collapse">Collapse</button>
+        </div>
+        <h3><label{% if child.id_for_label %} for="{{ child.id_for_label }}"{% endif %}><span class="icon icon-streamfield icon-{{ child.block.meta.icon }}"></span><strong>{{ child.block.label }}</strong> - <span class="child_value">{{ child.value|striptags|truncatewords:5 }}</span></label></h3>
+        <div class="button-group button-group-square">
+            <button type="button" id="{{ prefix }}-moveup" title="{% trans 'Move up' %}" class="button icon text-replace icon-order-up">{% trans 'Move up' %}</button>
+            <button type="button" id="{{ prefix }}-movedown" title="{% trans 'Move down' %}" class="button icon text-replace icon-order-down">{% trans 'Move down' %}</button>
+            <button type="button" title="{% trans 'Delete' %}" class="button delete-open-toggle icon text-replace hover-no icon-bin">{% trans 'Delete' %}</button>
+            <div class="delete-dialog closed">
+                <a id="{{ prefix }}-delete" title="Confirm delete" class="delete-confirmation">{% trans 'Delete' %}</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
