@@ -34,7 +34,10 @@ setup(
     name='wagtailclearstream',
     version=__version__,
     description='Improvement to StreamField UI by extending StreamBlock.',
-    long_description=long_description,
+    long_description='This gives support to StreamField UI by allowing neater '
+    'nesting of StreamField blocks, allowing StreamField blocks to be opened '
+    'or collapsed, and ensuring that a user confirms the deletion of a '
+    'StreamField block before it is deleted.',
     url='https://github.com/heymonkeyriot/wagtailclearstream',
     author='Edd Baldry',
     author_email='edd.baldry@gmail.com',
@@ -52,7 +55,7 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-        "wagtail>=1.4.0",
+        "wagtail>=1.7.0",
         "Django>=1.7.1",
     ],
     cmdclass={'egg_info': egg_info},
