@@ -1,8 +1,6 @@
 // For various js fun
 $(document).ready(function() {
     // Fix the top Streamfield bar through the StreamField section
-    var stickyStreamField = $('.block_field.stream-field h2').offset().top,
-        make_draggable;
 
     function MakeDraggable(){
         var el = $(this),
@@ -65,6 +63,7 @@ $(document).ready(function() {
         $(this).toggleClass('icon-bin icon-cross');
     }
 
+    var stickyStreamField = $('.block_field.stream-field h2').offset().top;
     $(window).scroll(function() {
         if ($(window).scrollTop() > stickyStreamField) {
             $('.block_field.stream-field h2').addClass('fixed');
@@ -95,13 +94,13 @@ $(document).ready(function() {
             button = new_element.find('button.collapse');
             button.removeClass('icon-plus');
             button.addClass('icon-collapse-up');
-            make_draggable.call(event.originalTarget);
+            MakeDraggable.call(event.originalTarget);
         }
     });
 
     $('.sequence-member')
         .addClass('collapsed')
-        //.each(make_draggable);
+        .each(MakeDraggable);
 
 
     $('#body-list').on("click", "button.collapse", CollapseOpenSequenceMember);
