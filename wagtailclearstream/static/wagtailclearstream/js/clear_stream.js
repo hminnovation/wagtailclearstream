@@ -48,6 +48,11 @@ $(document).ready(function() {
         });
     }
 
+    // Open/ close all sequence-members
+    $(this).find('.stream-field h2').on('click', function() {
+        $(document).find('.sequence-member').toggleClass('collapsed ');
+        });
+
     function CollapseOpenSequenceMember(){
         // toggle the parent's class 'collapsed'
         var parent = $(this).parents('.sequence-member').first();
@@ -96,7 +101,7 @@ $(document).ready(function() {
 
     $('.sequence-member')
         .addClass('collapsed')
-        .each(make_draggable);
+        //.each(make_draggable);
 
 
     $('#body-list').on("click", "button.collapse", CollapseOpenSequenceMember);
