@@ -14,17 +14,16 @@ $(document).ready(function() {
                 click_target, my_position, target_position;
 
             if(snapped_to.length === 1){
-                snapped_to = snapped_to[0];
+                snapped_to = $(snapped_to[0]);
             }else{
                 return;
             }
 
-            function extract_position(id){
-                var elems = id.split('-');
-                return elems[elems.length-2];
+            function extract_position(elem){
+                return elem.parent().children().index(elem);
             }
-            my_position = extract_position(this.id);
-            target_position = extract_position(snapped_to.id);
+            my_position = extract_position(el);
+            target_position = extract_position(snapped_to);
             if (my_position > target_position){
                 click_target = $(this).find('.icon-order-up');
             }else{
@@ -40,7 +39,7 @@ $(document).ready(function() {
             containment: "parent",
             revert: true,
             revertDuration: 0,
-            snap: parent_id + " > .sequence-member",
+            snap: "#" + parent_id + " > .sequence-member",
             snapMode: "outer",
             stop: StopAction,
         });
