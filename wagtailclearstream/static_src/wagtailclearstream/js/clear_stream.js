@@ -2,13 +2,13 @@
 $(document).ready(function() {
     // Fix the top Streamfield bar through the StreamField section
     var stickyStreamField = $('.block_field.stream-field h2').offset().top;
-    $(window).scroll(function() {  
+    $(window).scroll(function() {
         if ($(window).scrollTop() > stickyStreamField) {
             $('.block_field.stream-field h2').addClass('fixed');
         }
         else {
             $('.block_field.stream-field h2').removeClass('fixed');
-        }  
+        }
     });
 
     // Rather than remove the fixed div class we calculate the height
@@ -24,65 +24,22 @@ $(document).ready(function() {
         $(".block_field.stream-field h2").css("top",position_fixed);
 });
 
-    
+
     $(this).find('.stream-field h2').on('click', function() {
         $(document).find('.sequence-member').toggleClass('collapsed ');
         });
 
-    // find every .sequence-member in the dom
-    $('.sequence-member').each(function() {
-        var el = $(this);
-        var delDialog = $(this).find('.delete-dialog');
-
-        // add collapsed class to all divs with .sequence-member
-        $(this).addClass('collapsed');
-
-        function CollapseOpenSequenceMember(){
-            // toggle the parent's class 'collapsed'
-            el.toggleClass('collapsed');
-            $(this).toggleClass('icon-plus icon-collapse-up');
-        }
-        // These functions toggle the sequence-member to three levels
-        $(this).find('button.collapse').on('click', CollapseOpenSequenceMember)
-        $(this).find('li li button.collapse').on('click', CollapseOpenSequenceMember)
-        $(this).find('li li li li li button.collapse').on('click', CollapseOpenSequenceMember)
-
-        function DeleteButtonOpen(){
-            // toggle the delete button open and closed
-            delDialog.toggleClass('closed open');
-            $(this).toggleClass('icon-bin icon-cross');
-        }
-        // These functions find the delete button to three StreamField levels
-        $(this).find('button.delete-open-toggle').on('click', DeleteButtonOpen)
-        $(this).find('li li button.delete-open-toggle').on('click', DeleteButtonOpen)
-        $(this).find('li li li li li button.delete-open-toggle').on('click', DeleteButtonOpen)
-    });
-    // @TODO not make people cry seeing below
-    document.addEventListener("DOMNodeInserted", function(event) {
-    // console.log("hello")
-        $('.sequence-member').each(function() {
-        var el = $(this);
-        var delDialog = $(this).find('.delete-dialog');
-
-        function CollapseOpenSequenceMember(){
-            // toggle the parent's class 'collapsed'
-            el.toggleClass('collapsed');
-            $(this).toggleClass('icon-plus icon-collapse-up');
-        }
-        // These functions toggle the sequence-member to three levels
-        $(this).find('button.collapse').on('click', CollapseOpenSequenceMember)
-        $(this).find('li li button.collapse').on('click', CollapseOpenSequenceMember)
-        $(this).find('li li li li li button.collapse').on('click', CollapseOpenSequenceMember)
-
-        function DeleteButtonOpen(){
-            // toggle the delete button open and closed
-            delDialog.toggleClass('closed open');
-            $(this).toggleClass('icon-bin icon-cross');
-        }
-        // These functions find the delete button to three StreamField levels
-        $(this).find('button.delete-open-toggle').on('click', DeleteButtonOpen)
-        $(this).find('li li button.delete-open-toggle').on('click', DeleteButtonOpen)
-        $(this).find('li li li li li button.delete-open-toggle').on('click', DeleteButtonOpen)
-        });
-    });
+    function CollapseOpenSequenceMember(){
+        // toggle the parent's class 'collapsed'
+        var parent = $(this).parent('.sequence-member');
+        parent.toggleClass('collapsed');
+        $(this).toggleClass('icon-plus icon-collapse-up');
+    }
+    function DeleteButtonOpen(){
+        // toggle the delete button open and closed
+        delDialog.toggleClass('closed open');
+        $(this).toggleClass('icon-bin icon-cross');
+    }
+    el.find('.sequence').on("click", "button.collapse", CollapseOpenSequenceMember);
+    el.find('.sequence').on("click", "button.delete-open-toggle", DeleteButtonOpen);
 });
