@@ -1,5 +1,5 @@
 node_modules/
-wagtailclearstream/static/
+wagtailclearstream/static/wagtailclearstream/css
 wagtailclearstream.egg-info/
 dist/
 build/
