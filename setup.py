@@ -6,7 +6,7 @@ from codecs import open
 from os import path
 
 from setuptools import find_packages, setup
-from setuptools.command.egg_info import egg_info as base_egg_info
+from setuptools.command.sdist import sdist as base_sdist
 
 from wagtailclearstream import __version__
 
@@ -17,10 +17,10 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 
-class egg_info(base_egg_info):
+class sdist(base_sdist):
     def run(self):
         self.compile_assets()
-        base_egg_info.run(self)
+        base_sdist.run(self)
 
     def compile_assets(self):
         try:
@@ -58,5 +58,5 @@ setup(
         "wagtail>=1.7.0",
         "Django>=1.7.1",
     ],
-    cmdclass={'egg_info': egg_info},
+    cmdclass={'sdist': sdist},
 )
