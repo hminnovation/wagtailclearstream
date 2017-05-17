@@ -1,1 +1,3 @@
+include LICENSE README.md
 recursive-include wagtailclearstream/static *
+recursive-include wagtailclearstream/templates *
