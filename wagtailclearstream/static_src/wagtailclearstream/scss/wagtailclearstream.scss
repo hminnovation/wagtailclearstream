@@ -125,11 +125,15 @@ $sequence-bg: #f2f2f2;
     // Nested block styles
     .sequence-member {
       // background: $color-salmon-light;
-      border: 1px solid $color-salmon-light;
-      border-radius: 4px;
-      margin: 20px 0;
+      border-bottom: 1px solid $color-grey-3;
+      border-radius: 0px;
+      padding: 10px;
+      &:hover {
+        border-top: 0px solid $color-grey-3;
+        background-color: $color-grey-5;
+      }
       .sequence-member-inner {
-        background-color: white;
+        // background-color: white;
         input, textarea, select, .richtext, .tagit {
           box-sizing: border-box;
           border-radius: 6px;
@@ -172,7 +176,7 @@ $sequence-bg: #f2f2f2;
     }
     .sequence-controls,
     .drop-target{
-      background: $color-salmon-light;
+      background: transparent;
       border-radius: 0;
       border: none;
       display: flex;
@@ -180,6 +184,7 @@ $sequence-bg: #f2f2f2;
       justify-content: flex-end;
       opacity: 1;
       overflow: hidden;
+      padding: 0 0 0 1.5em;
       position: static;
       visibility: visible;
       label {
@@ -252,7 +257,48 @@ $sequence-bg: #f2f2f2;
       }
     }
   }
+  .stream-menu .toggle {
+  margin: 10px -10px;
+  width: 1.5em;
+  height: 1.5em;
+    &::before {
+      font-size: 1.5em;
+    }
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      width: 1100px;
+      background-color: transparent;
+      margin-left: 1.8em;
+      margin-top: 0.5em;
+    }
+    &:hover {
+      &::after {
+        height: 2px;
+        width: 1100px;
+        background-color: #43b1b0;
+      }
+    }
+  }
+  .sequence-member:hover .stream-menu {
+      visibility: visible;
+      opacity: 1;
+      width: 100%;
+      display: block;
+      cursor: pointer;
+  }
+  .stream-menu.stream-menu-closed:hover {
+    // &::after {
+    //   content: "";
+    //   display: block;
+    //   height: 1px;
+    //   width: 80%;
+    //   color: #43b1b0;
+    // }
+  }
 }
+
 .hallotoolbar.hallotoolbar {
   margin-top: 0;
   margin-left: 0;
@@ -375,7 +421,7 @@ $sequence-bg: #f2f2f2;
 }
 
 .icon-streamfield {
-  margin: -10px 10px 0 0;
+  margin: 8px 10px 0 0;
   display: inline-block;
   border: 1px solid $color-grey-3;
   padding: 4px 4px 4px 7px;
