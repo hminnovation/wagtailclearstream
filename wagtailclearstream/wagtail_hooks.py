@@ -3,8 +3,8 @@ from pkg_resources import parse_version
 from django.utils.html import format_html
 from django.conf import settings
 
-from wagtail.wagtailcore import hooks
-from wagtail.wagtailcore import __version__ as WAGTAIL_VERSION
+from wagtail.core import hooks
+from wagtail.core import __version__ as WAGTAIL_VERSION
 
 @hooks.register('insert_global_admin_css')
 def global_admin_css():
