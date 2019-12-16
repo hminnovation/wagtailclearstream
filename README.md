@@ -1,3 +1,5 @@
+Note: this project hasn't been updated since 2017 and is no longer maintained. It is likely to break with the latest version of Wagtail.
+
 Wagtail Clear StreamField
 ============================
 This is an amended version of Wagtail's StreamField interface that introduces a new class called `ClearField`
