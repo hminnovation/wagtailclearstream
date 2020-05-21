@@ -13,9 +13,8 @@ def global_admin_css():
 
 @hooks.register('insert_global_admin_js')
 def global_admin_js():
-    return format_html(
-        '<script src="/static/wagtailclearstream/js/clear_stream.js"></script>',
-    )
+    elem = '<script src="%swagtailclearstream/js/clear_stream.js"></script>' % settings.STATIC_URL
+    return format_html(elem)
 
 # New Wagtail versions support importing CSS throughout the admin.
 # Fall back to the old hook (editor screen only) for older versions.
